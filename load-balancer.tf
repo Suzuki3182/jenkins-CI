@@ -8,10 +8,10 @@ resource "google_compute_url_map" "url_map" {
 }
 
 resource "google_compute_backend_service" "static_site_backend" {
-  name        = "static-site-backend"
-  port_name   = "http"
-  protocol    = "HTTP"
-  timeout_sec = 10
+  name          = "static-site-backend"
+  port_name     = "http"
+  protocol      = "HTTP"
+  timeout_sec   = 10
   health_checks = [google_compute_http_health_check.static_site_check.self_link]
 }
 
@@ -28,8 +28,8 @@ resource "google_compute_target_http_proxy" "http_proxy" {
 }
 
 resource "google_compute_global_forwarding_rule" "http_rule" {
-  name        = "http-forwarding-rule"
-  ip_address  = google_compute_global_address.static_ip.address
-  port_range  = "80"
-  target      = google_compute_target_http_proxy.http_proxy.self_link
+  name       = "http-forwarding-rule"
+  ip_address = google_compute_global_address.static_ip.address
+  port_range = "80"
+  target     = google_compute_target_http_proxy.http_proxy.self_link
 }
