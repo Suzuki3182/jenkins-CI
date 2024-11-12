@@ -14,7 +14,7 @@ resource "google_storage_bucket" "static_site" {
 resource "google_storage_bucket_object" "index" {
   name   = "index.html"
   bucket = google_storage_bucket.static_site.name
-  source = "/tmp/index.html"
+  source = "gs://your-static-website-bucket/index.html"
   content_type = "text/html"
 }
 
