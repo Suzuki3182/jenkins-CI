@@ -18,7 +18,9 @@ resource "google_storage_bucket_object" "index" {
   content_type = "text/html"
 }
 
-resource "google_compute_global_address" "static_site_ip" {}
+resource "google_compute_global_address" "static_site_ip" {
+  name = "static-site-ip"
+}
 
 resource "google_compute_backend_bucket" "static_site_backend" {
   name        = "static-site-backend"
