@@ -14,7 +14,7 @@ resource "google_storage_bucket" "static_site" {
 resource "google_storage_bucket_object" "index" {
   name   = "index.html"
   bucket = google_storage_bucket.static_site.name
-  source = "gsutil gs://your-static-website-bucket/index.html"
+  source = ""${path.module}/index.html" "
   content_type = "text/html"
 }
 
