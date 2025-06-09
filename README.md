@@ -1,4 +1,3 @@
-Below is a well-structured `README.md` file for the repository `Suzuki3182/jenkins-CI` based on the provided information. This README provides an overview of the project, its purpose, and instructions for users.
 
 ---
 
